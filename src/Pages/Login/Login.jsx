@@ -9,6 +9,7 @@ import {
 import { Link } from "react-router-dom";
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../Components/firebase.init';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Login = () => {
     const [
@@ -16,10 +17,17 @@ const Login = () => {
         user,
         loading,
         error,
-      ] = useSignInWithEmailAndPassword(auth);
-      let errorMessage
+    ] = useSignInWithEmailAndPassword(auth);
+    const navigate = useNavigate();
+    const location = useLocation();
 
-    const handleLogin = (e) =>{
+    let from = location.state?.from?.pathname || "/";
+    
+    if (user) {
+        navigate(from, { replace: true });
+    }
+
+    const handleLogin = (e) => {
         e.preventDefault()
         const email = e.target.email.value
         const password = e.target.password.value
