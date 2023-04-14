@@ -8,54 +8,55 @@ import {
     Button,
     Tooltip,
     IconButton,
-  } from "@material-tailwind/react";
+} from "@material-tailwind/react";
+import { AiFillStar } from 'react-icons/ai';
 
 
-const ProductCard = ({data}) => {
-    const {id, title, description, price, rating, brand, category, thumbnail} = data
+const ProductCard = ({ data }) => {
+    const { id, title, description, price, rating, brand, category, image } = data
     return (
         <Card className="w-full max-w-[26rem] shadow-lg">
-      <CardHeader floated={false} color="blue-gray">
-        <img
-          src={thumbnail}
-          alt={title}
-          className='w-full h-64 object-cover'
-        />
-        <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
-        <IconButton
-          size="sm"
-          color="red"
-          variant="text"
-          className="!absolute top-4 right-4 rounded-full"
-        >
-          
-        </IconButton>
-      </CardHeader>
-      <CardBody>
-        <div className="mb-3 flex items-center justify-between">
-          <Typography variant="h5" color="blue-gray" className="font-medium">
-            Wooden House, Florida
-          </Typography>
-          <Typography
-            color="blue-gray"
-            className="flex items-center gap-1.5 font-normal"
-          >
-            
-            5.0
-          </Typography>
-        </div>
-        <Typography color="gray">
-          Enter a freshly updated and thoughtfully furnished peaceful home
-          surrounded by ancient trees, stone walls, and open meadows.
-        </Typography>
+            <CardHeader floated={false} color="blue-gray" className='shadow-none'>
+                <img
+                    src={image}
+                    alt={title}
+                    className='w-full h-44 lg:h-56 object-cover'
+                />
+                <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
+            </CardHeader>
 
-      </CardBody>
-      <CardFooter className="pt-3">
-        <Button size="lg" fullWidth={true}>
-          Reserve
-        </Button>
-      </CardFooter>
-    </Card>
+            <CardBody className='p-4'>
+
+                <div className="mb-3 flex items-center justify-between">
+                    <Typography variant="h5" color="blue-gray" className="font-medium">
+                        {title.slice(0, 34)}...
+                    </Typography>
+                    <Typography
+                        color="blue-gray"
+                        className="flex items-center gap-1.5 font-normal"
+                    >
+                    </Typography>
+                </div>
+
+                <Typography color="blue-gray" variant="paragraph">
+                    Category: <span className='font-bold capitalize text-base'>{category}</span>
+                </Typography>
+                <Typography color="blue-gray" variant="paragraph">
+                    Price: <span className='font-bold capitalize text-base'>${price}</span>
+                </Typography>
+
+                <div className="rating flex items-center">
+                    <span className='text-[#FBC02D] mr-1'><AiFillStar /></span>
+                    {rating.rate}
+                </div>
+            </CardBody>
+
+            <CardFooter className=" p-4">
+                <Button size="lg" fullWidth={true}>
+                    Add To Cart
+                </Button>
+            </CardFooter>
+        </Card>
     );
 };
 

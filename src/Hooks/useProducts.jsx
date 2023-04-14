@@ -5,9 +5,9 @@ import { useState } from "react";
 const useProducts = () => {
     const [products, setProducts] = useState([])
     useEffect(() => {
-        axios.get("https://dummyjson.com/products")
+        axios.get("https://fakestoreapi.com/products")
             .then((res) => {
-                setProducts(res.data.products)
+                setProducts(res.data)
             });
     }, [])
     return [products]
