@@ -6,13 +6,25 @@ import {
     Button,
     IconButton,
     Card,
+    Menu,
+    MenuHandler,
+    MenuList,
+    MenuItem,
+    Avatar,
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 import { BsCart } from 'react-icons/bs';
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../firebase.init";
+import { AiOutlineUser } from 'react-icons/ai';
+import { signOut } from 'firebase/auth';
 
 const NavMenu = () => {
     const [openNav, setOpenNav] = React.useState(false);
-
+    const [user] = useAuthState(auth)
+    const logout = () =>{
+        signOut(auth);
+    }
     React.useEffect(() => {
         window.addEventListener(
             "resize",
@@ -37,14 +49,33 @@ const NavMenu = () => {
             >
                 <Link to='/all-products' className="flex items-center">All Product</Link>
             </Typography>
-            <Typography
-                as="li"
-                variant="small"
-                color="blue-gray"
-                className="p-1 font-normal text-base"
-            >
-                <Link to='/login' className="flex items-center">Login</Link>
-            </Typography>
+            {
+                user ?
+                    <Menu>
+                        <MenuHandler>
+                            {/* <AiOutlineUser/> */}
+                            <IconButton>
+                                <span  className="text-base"><AiOutlineUser /></span>         
+                            </IconButton>
+                        </MenuHandler>
+                        <MenuList>
+                            <MenuItem>
+                                <Link to='/profile'>Profile</Link>
+                            </MenuItem>
+                            <MenuItem>
+                                <span onClick={logout}>Sign out</span>
+                            </MenuItem>
+                        </MenuList>
+                    </Menu> :
+                    <Typography
+                        as="li"
+                        variant="small"
+                        color="blue-gray"
+                        className="p-1 font-normal text-base"
+                    >
+                        <Link to='/login' className="flex items-center">Login</Link>
+                    </Typography>
+            }
         </ul>
     );
     return (

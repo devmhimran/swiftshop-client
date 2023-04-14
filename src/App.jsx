@@ -9,16 +9,21 @@ import AllProducts from './Pages/AllProducts/AllProducts'
 import Login from './Pages/Login/Login'
 import Cart from './Pages/Cart/Cart'
 import Register from './Pages/Register/Register'
+import RequireAuth from './Components/RequireAuth/RequireAuth'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <NavMenu/>
+      <NavMenu />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/all-products" element={<AllProducts />} />
+        <Route path="/all-products" element={
+          <RequireAuth>
+            <AllProducts />
+          </RequireAuth>
+        } />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/cart" element={<Cart />} />
