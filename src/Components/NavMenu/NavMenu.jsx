@@ -27,13 +27,13 @@ const NavMenu = () => {
                 color="blue-gray"
                 className="p-1 font-normal"
             >
-                <Link to='/' className="flex items-center">Home</Link>
+                <Link to='/' className="flex items-center text-base">Home</Link>
             </Typography>
             <Typography
                 as="li"
                 variant="small"
                 color="blue-gray"
-                className="p-1 font-normal"
+                className="p-1 font-normal text-base"
             >
                 <Link to='/all-products' className="flex items-center">All Product</Link>
             </Typography>
@@ -41,7 +41,7 @@ const NavMenu = () => {
                 as="li"
                 variant="small"
                 color="blue-gray"
-                className="p-1 font-normal"
+                className="p-1 font-normal text-base"
             >
                 <Link to='/login' className="flex items-center">Login</Link>
             </Typography>
@@ -50,7 +50,7 @@ const NavMenu = () => {
     return (
         <div className='container max-w-screen-xl lg:mx-auto lg:px-0 px-3 pb-20 mt-3'>
 
-            <Navbar className="sticky inset-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
+            <Navbar className="sticky inset-0 z-10 h-max max-w-full rounded-none py-2 shadow-none px-4 lg:px-8 lg:py-4">
                 <div className="flex items-center justify-between text-blue-gray-900">
                     <Typography
                         as="a"
@@ -61,13 +61,11 @@ const NavMenu = () => {
                     </Typography>
                     <div className="flex items-center gap-4">
                         <div className="mr-4 hidden lg:block">{navList}</div>
-                        <Button
-                            variant="gradient"
-                            size="sm"
-                            className="hidden lg:inline-block"
-                        >
-                            <span><BsCart /></span>
-                        </Button>
+                        <Link to='/cart'>
+                            <IconButton>
+                                <span className="text-base"><BsCart /></span>
+                            </IconButton>
+                        </Link>
                         <IconButton
                             variant="text"
                             className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
@@ -109,9 +107,11 @@ const NavMenu = () => {
                 </div>
                 <MobileNav open={openNav}>
                     {navList}
-                    <Button variant="gradient" size="sm" fullWidth className="mb-2">
-                        <span><BsCart /></span>
-                    </Button>
+                    <Link to='/cart'>
+                        <IconButton>
+                            <span className="text-base"><BsCart /></span>
+                        </IconButton>
+                    </Link>
                 </MobileNav>
             </Navbar>
             <hr />
