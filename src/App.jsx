@@ -12,7 +12,6 @@ import Register from './Pages/Register/Register'
 import RequireAuth from './Components/RequireAuth/RequireAuth'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">

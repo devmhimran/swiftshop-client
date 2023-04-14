@@ -60,7 +60,7 @@ const NavMenu = () => {
                         </MenuHandler>
                         <MenuList>
                             <MenuItem>
-                                <Link to='/profile'>Profile</Link>
+                                <Link to='/dashboard'>Dashboard</Link>
                             </MenuItem>
                             <MenuItem>
                                 <span onClick={logout}>Sign out</span>
@@ -138,11 +138,6 @@ const NavMenu = () => {
                 </div>
                 <MobileNav open={openNav}>
                     {navList}
-                    <Link to='/cart'>
-                        <IconButton>
-                            <span className="text-base"><BsCart /></span>
-                        </IconButton>
-                    </Link>
                 </MobileNav>
             </Navbar>
             <hr />
