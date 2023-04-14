@@ -45,7 +45,7 @@ const NavMenu = () => {
                 variant="small"
                 className="p-1 font-medium text-dark"
             >
-                <Link to='/all-products' className="flex items-center text-base">All Product</Link>
+                <Link to='/products' className="flex items-center text-base">Products</Link>
             </Typography>
             {
                 user ?

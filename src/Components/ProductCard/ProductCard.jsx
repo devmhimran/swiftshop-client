@@ -10,10 +10,12 @@ import {
     IconButton,
 } from "@material-tailwind/react";
 import { AiFillStar } from 'react-icons/ai';
+import { useNavigate } from 'react-router-dom'
 
 
-const ProductCard = ({ data }) => {
+const ProductCard = ({ data, handleCart }) => {
     const { id, title, description, price, rating, brand, category, image } = data
+    const navigate = useNavigate()
     return (
         <Card className="w-full max-w-[26rem] shadow-lg">
             <CardHeader floated={false} color="blue-gray" className='shadow-none'>
@@ -42,7 +44,7 @@ const ProductCard = ({ data }) => {
                     Category: <span className='font-bold capitalize text-base'>{category}</span>
                 </Typography>
                 <Typography color="blue-gray" variant="paragraph">
-                    Price: <span className='font-bold capitalize text-base'>${price}</span>
+                    <span className='font-bold capitalize text-xl my-2'>${price}</span>
                 </Typography>
 
                 <div className="rating flex items-center">
@@ -52,8 +54,8 @@ const ProductCard = ({ data }) => {
             </CardBody>
 
             <CardFooter className=" p-4">
-                <Button size="lg" fullWidth={true}>
-                    Add To Cart
+                <Button onClick={() => handleCart(data)} size="lg" fullWidth={true}>
+                    View Detail
                 </Button>
             </CardFooter>
         </Card>

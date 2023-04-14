@@ -18,7 +18,7 @@ function App() {
       <NavMenu />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/all-products" element={
+        <Route path="/products" element={
           <RequireAuth>
             <AllProducts />
           </RequireAuth>
