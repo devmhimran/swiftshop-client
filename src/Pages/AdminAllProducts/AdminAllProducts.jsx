@@ -27,7 +27,7 @@ const AdminAllProducts = () => {
                 </thead>
                 <tbody>
                     {
-                        products.map(product => <ProductTableRow key={product.id} product={product} />)
+                        products.map(product => <ProductTableRow key={product._id} product={product} />)
                     }
                 </tbody>
             </table>

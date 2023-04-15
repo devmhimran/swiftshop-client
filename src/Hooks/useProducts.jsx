@@ -5,7 +5,7 @@ import { useState } from "react";
 const useProducts = () => {
     const [products, setProducts] = useState([])
     useEffect(() => {
-        axios.get("https://fakestoreapi.com/products")
+        axios.get("http://localhost:5000/products")
             .then((res) => {
                 setProducts(res.data)
             });

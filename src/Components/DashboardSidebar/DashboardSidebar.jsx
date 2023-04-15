@@ -5,19 +5,19 @@ const DashboardSidebar = () => {
     return (
         <div className='shadow rounded-md py-16 h-full flex justify-center'>
             <div>
-                <div className='py-4 hover:underline text-lg'>
+                <div className='py-2 hover:underline text-lg'>
                     <Link to='/dashboard/'>
                         All Products
                     </Link>
                     <hr />
                 </div>
-                <div className='py-4 hover:underline text-lg'>
+                <div className='py-2 hover:underline text-lg'>
                     <Link to='/dashboard/customers'>
                         Customers
                     </Link>
                     <hr />
                 </div>
-                <div className='py-4 hover:underline text-lg'>
+                <div className='py-2 hover:underline text-lg'>
                     <Link to='/dashboard/orders'>
                         Orders
                     </Link>
