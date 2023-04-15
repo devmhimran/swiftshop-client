@@ -10,6 +10,8 @@ import Login from './Pages/Login/Login'
 import Cart from './Pages/Cart/Cart'
 import Register from './Pages/Register/Register'
 import RequireAuth from './Components/RequireAuth/RequireAuth'
+import SingleProduct from './Pages/SingleProduct/SingleProduct'
+import Dashboard from './Pages/Dashboard/Dashboard'
 
 function App() {
 
@@ -19,13 +21,18 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={
-          <RequireAuth>
-            <AllProducts />
-          </RequireAuth>
+          <AllProducts />
         } />
         <Route path="/login" element={<Login />} />
+        <Route path="/products/:id" element={<SingleProduct />} />
         <Route path="/register" element={<Register />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path='/dashboard' element={
+          <RequireAuth>
+            <Dashboard />
+          </RequireAuth>
+        }>
+        </Route>
       </Routes>
     </div>
   )

@@ -54,7 +54,7 @@ const ProductCard = ({ data, handleCart }) => {
             </CardBody>
 
             <CardFooter className=" p-4">
-                <Button onClick={() => handleCart(data)} size="lg" fullWidth={true}>
+                <Button onClick={() => navigate(`/products/${id}`)} size="lg" fullWidth={true}>
                     View Detail
                 </Button>
             </CardFooter>
