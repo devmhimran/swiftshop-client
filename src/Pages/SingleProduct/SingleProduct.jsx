@@ -13,6 +13,7 @@ import {
     Tab,
     TabPanel,
 } from "@material-tailwind/react";
+import PageTitle from '../../Components/PageTitle/PageTitle';
 
 const SingleProduct = () => {
     const { id } = useParams()
@@ -42,6 +43,7 @@ const SingleProduct = () => {
     console.log(product)
     return (
         <div className='single__product '>
+            <PageTitle title={`${title}`} />
             <div className='container max-w-screen-xl mx-auto lg:py-24 md:py-16 py-16 my-10'>
                 <div className='border rounded px-1 lg:p-8  grid grid-cols-1 lg:grid-cols-2 gap-4 '>
                     <div>

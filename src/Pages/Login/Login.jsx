@@ -11,6 +11,7 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../Components/firebase.init';
 import { useNavigate, useLocation } from 'react-router-dom';
 import useToken from '../../Hooks/useToken';
+import PageTitle from '../../Components/PageTitle/PageTitle';
 
 const Login = () => {
     const [
@@ -39,6 +40,7 @@ const Login = () => {
     console.log(user)
     return (
         <div className='container max-w-screen-xl lg:mx-auto lg:px-0 px-3 pb-20'>
+            <PageTitle title='Login' />
             <Card color="transparent" shadow={false} className='w-[40%] mx-auto'>
                 <Typography variant="h4" color="blue-gray">
                     Sign In

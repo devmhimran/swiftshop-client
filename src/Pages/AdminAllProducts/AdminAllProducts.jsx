@@ -4,12 +4,14 @@ import ProductTableRow from '../../Components/ProductTableRow/ProductTableRow';
 import { Button } from '@material-tailwind/react';
 import { Link } from 'react-router-dom';
 import DashboardTitle from '../../Components/DashboardTitle/DashboardTitle';
+import PageTitle from '../../Components/PageTitle/PageTitle';
 
 const AdminAllProducts = () => {
     const [products] = useProducts();
     return (
         <div>
             <DashboardTitle title='All Products' />
+            <PageTitle title='All Products' />
             <div className='flex justify-end mb-2'>
                 <Button><Link to='/dashboard/add-product'>Add Product</Link></Button>
             </div>

@@ -7,10 +7,12 @@ import {
     Typography,
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
+import PageTitle from '../../Components/PageTitle/PageTitle';
 
 const Register = () => {
     return (
         <div className='container max-w-screen-xl lg:mx-auto lg:px-0 px-3 pb-20'>
+            <PageTitle title='Register' />
             <Card color="transparent" shadow={false} className='w-[40%] mx-auto'>
                 <Typography variant="h4" color="blue-gray">
                     Sign Up
