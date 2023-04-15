@@ -31,7 +31,6 @@ const AdminAllProducts = () => {
                     }
                 </tbody>
             </table>
-
         </div>
     );
 };
