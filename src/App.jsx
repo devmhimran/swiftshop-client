@@ -12,6 +12,9 @@ import Register from './Pages/Register/Register'
 import RequireAuth from './Components/RequireAuth/RequireAuth'
 import SingleProduct from './Pages/SingleProduct/SingleProduct'
 import Dashboard from './Pages/Dashboard/Dashboard'
+import AdminAllProducts from './Pages/AdminAllProducts/AdminAllProducts'
+import AllOrders from './Pages/AllOrders/AllOrders'
+import AllCustomer from './Pages/AllCustomer/AllCustomer'
 
 function App() {
 
@@ -32,6 +35,21 @@ function App() {
             <Dashboard />
           </RequireAuth>
         }>
+          <Route index element={
+            <RequireAuth>
+              <AdminAllProducts />
+            </RequireAuth>
+          } />
+          <Route path='customers' element={
+            <RequireAuth>
+              <AllCustomer />
+            </RequireAuth>
+          } />
+          <Route path='orders' element={
+            <RequireAuth>
+              <AllOrders />
+            </RequireAuth>
+          } />
         </Route>
       </Routes>
     </div>
