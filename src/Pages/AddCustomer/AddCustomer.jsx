@@ -23,7 +23,7 @@ const AddCustomer = () => {
             phone,
             address
         }
-        
+
         axios.post(url, customerData, { headers })
             .then((response) => {
                 toast.success('Successfully Uploaded!')
@@ -46,7 +46,7 @@ const AddCustomer = () => {
                         <Input label='Email' type='email' name='email' required />
                     </div>
                     <div className='my-3'>
-                        <Input label='Phone' type='text' name='phone' required />
+                        <Input label='Phone' type='phone' name='phone' required />
                     </div>
                     <div className='my-3'>
                         <Textarea label='Address' name='address' required />

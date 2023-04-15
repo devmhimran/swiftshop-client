@@ -4,13 +4,20 @@ import PageTitle from '../../Components/PageTitle/PageTitle';
 import axios from 'axios';
 import { Button } from '@material-tailwind/react';
 import { Link } from 'react-router-dom';
+import CustomerTableRow from '../../Components/CustomerTableRow/CustomerTableRow';
 
 const AllCustomer = () => {
     const [customer, setCustomer] = useState([]);
+    const url = 'http://localhost:5000/customers'
+    const headers = {
+        'Content-Type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+    };
 
-    // useEffect(()=>{
-    //     axios.get('')
-    // },[])    
+    useEffect(()=>{
+        axios.get(url, { headers })
+        .then(res => setCustomer(res.data))
+    },[])    
     return (
         <div>
             <DashboardTitle title='Customers' />
@@ -23,14 +30,13 @@ const AllCustomer = () => {
                     <tr>
                         <th className='text-left px-1'>Name</th>
                         <th className='text-left px-1'>Email</th>
-                        <th className='text-left px-1'>Address</th>
                         <th className='text-left px-1'>Option</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {/* {
-                        products.map(product => <ProductTableRow key={product._id} product={product} />)
-                    } */}
+                    {
+                        customer.map(customer => <CustomerTableRow key={customer._id} customer={customer} />)
+                    }
                 </tbody>
             </table>
         </div>
