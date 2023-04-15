@@ -24,6 +24,7 @@ const NavMenu = () => {
     const [user] = useAuthState(auth)
     const logout = () =>{
         signOut(auth);
+        localStorage.removeItem('accessToken');
     }
     React.useEffect(() => {
         window.addEventListener(
@@ -36,14 +37,14 @@ const NavMenu = () => {
             <Typography
                 as="li"
                 variant="small"
-                className="p-1 font-medium text-dark"
+                className="p-1 font-medium text-black"
             >
                 <Link to='/' className="flex items-center text-base">Home</Link>
             </Typography>
             <Typography
                 as="li"
                 variant="small"
-                className="p-1 font-medium text-dark"
+                className="p-1 font-medium text-black"
             >
                 <Link to='/products' className="flex items-center text-base">Products</Link>
             </Typography>
@@ -68,7 +69,7 @@ const NavMenu = () => {
                     <Typography
                         as="li"
                         variant="small"
-                        className=" font-medium text-dark"
+                        className=" font-medium  text-black"
                     >
                         <Link to='/login' className="flex items-center text-base">Login</Link>
                     </Typography>
