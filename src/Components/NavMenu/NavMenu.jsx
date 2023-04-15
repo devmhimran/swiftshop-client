@@ -22,7 +22,7 @@ import { signOut } from 'firebase/auth';
 const NavMenu = () => {
     const [openNav, setOpenNav] = React.useState(false);
     const [user] = useAuthState(auth)
-    const logout = () =>{
+    const logout = () => {
         signOut(auth);
         localStorage.removeItem('accessToken');
     }
@@ -53,7 +53,7 @@ const NavMenu = () => {
                     <Menu>
                         <MenuHandler>
                             <IconButton>
-                                <span  className="text-base"><AiOutlineUser /></span>         
+                                <span className="text-base"><AiOutlineUser /></span>
                             </IconButton>
                         </MenuHandler>
                         <MenuList>
@@ -77,16 +77,9 @@ const NavMenu = () => {
     );
     return (
         <div className='container max-w-screen-xl lg:mx-auto lg:px-0 px-3 mt-3'>
-
             <Navbar className="sticky inset-0 z-10 h-max max-w-full rounded-none py-2 shadow-none px-4 lg:px-8 lg:py-4">
                 <div className="flex items-center justify-between text-blue-gray-900">
-                    <Typography
-                        as="a"
-                        href="/"
-                        className="mr-4 cursor-pointer py-1.5 text-2xl font-bold"
-                    >
-                        Swift Shop
-                    </Typography>
+                    <Link to='/' className="mr-4 cursor-pointer py-1.5 text-2xl font-bold">Swift Shop</Link>
                     <div className="flex items-center gap-4">
                         <div className="mr-4 hidden lg:block">{navList}</div>
                         <Link to='/cart'>
