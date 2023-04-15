@@ -20,7 +20,7 @@ const SingleProduct = () => {
     const [product, setProduct] = useState([]);
     const { title, description, price, rating, brand, category, image } = product
     useEffect(() => {
-        axios.get(`https://fakestoreapi.com/products/${id}`)
+        axios.get(`http://localhost:5000/product/${id}`)
             .then(res => setProduct(res.data))
     }, [id])
 
@@ -40,7 +40,6 @@ const SingleProduct = () => {
         },
     ];
 
-    console.log(product)
     return (
         <div className='single__product '>
             <PageTitle title={`${title}`} />

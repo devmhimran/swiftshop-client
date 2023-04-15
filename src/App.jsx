@@ -16,6 +16,7 @@ import AdminAllProducts from './Pages/AdminAllProducts/AdminAllProducts'
 import AllOrders from './Pages/AllOrders/AllOrders'
 import AllCustomer from './Pages/AllCustomer/AllCustomer'
 import AddProduct from './Pages/AddProduct/AddProduct'
+import AddCustomer from './Pages/AddCustomer/AddCustomer'
 
 function App() {
 
@@ -54,6 +55,11 @@ function App() {
           <Route path='add-product' element={
             <RequireAuth>
               <AddProduct />
+            </RequireAuth>
+          } />
+          <Route path='add-customer' element={
+            <RequireAuth>
+              <AddCustomer />
             </RequireAuth>
           } />
         </Route>

@@ -16,7 +16,7 @@ const AllCustomer = () => {
             <DashboardTitle title='Customers' />
             <PageTitle title='Customers' />
             <div className='flex justify-end mb-2'>
-                <Button><Link to='/dashboard/add-product'>Add Customer</Link></Button>
+                <Button><Link to='/dashboard/add-customer'>Add Customer</Link></Button>
             </div>
             <table class="table-auto w-full">
                 <thead className='bg-gray-300'>

@@ -14,7 +14,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 const ProductCard = ({ data, handleCart }) => {
-    const { id, title, description, price, rating, brand, category, image } = data
+    const { _id, title, description, price, rating, brand, category, image } = data
     const navigate = useNavigate()
     return (
         <Card className="w-full max-w-[26rem] shadow-lg">
@@ -54,7 +54,7 @@ const ProductCard = ({ data, handleCart }) => {
             </CardBody>
 
             <CardFooter className=" p-4">
-                <Button onClick={() => navigate(`/products/${id}`)} size="lg" fullWidth={true}>
+                <Button onClick={() => navigate(`/products/${_id}`)} size="lg" fullWidth={true}>
                     View Detail
                 </Button>
             </CardFooter>
