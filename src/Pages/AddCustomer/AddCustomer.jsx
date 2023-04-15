@@ -27,7 +27,6 @@ const AddCustomer = () => {
         axios.post(url, customerData, { headers })
             .then((response) => {
                 toast.success('Successfully Uploaded!')
-                console.log(response.data);
             })
             .catch((error) => {
                 console.log(error);

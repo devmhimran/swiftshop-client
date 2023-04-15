@@ -52,7 +52,6 @@ const NavMenu = () => {
                 user ?
                     <Menu>
                         <MenuHandler>
-                            {/* <AiOutlineUser/> */}
                             <IconButton>
                                 <span  className="text-base"><AiOutlineUser /></span>         
                             </IconButton>
@@ -84,9 +83,9 @@ const NavMenu = () => {
                     <Typography
                         as="a"
                         href="/"
-                        className="mr-4 cursor-pointer py-1.5 font-medium"
+                        className="mr-4 cursor-pointer py-1.5 text-2xl font-bold"
                     >
-                        Material Tailwind
+                        Swift Shop
                     </Typography>
                     <div className="flex items-center gap-4">
                         <div className="mr-4 hidden lg:block">{navList}</div>

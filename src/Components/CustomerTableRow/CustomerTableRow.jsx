@@ -24,8 +24,6 @@ const CustomerTableRow = ({ customer }) => {
             .then(res => setSingleCustomer(res.data))
     }, [_id])
 
-    console.log()
-
     return (
         <>
             <tr>

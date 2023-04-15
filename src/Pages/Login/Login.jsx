@@ -24,7 +24,7 @@ const Login = () => {
     const location = useLocation();
     const [token] = useToken(user)
 
-    let from = location.state?.from?.pathname || "/";
+    let from = location.state?.from?.pathname || "/dashboard";
 
     const handleLogin = (e) => {
         e.preventDefault()
@@ -37,7 +37,7 @@ const Login = () => {
     if (token) {
         navigate(from, { replace: true });
     }
-    console.log(user)
+
     return (
         <div className='container max-w-screen-xl lg:mx-auto lg:px-0 px-3 pb-20 pt-12'>
             <PageTitle title='Login' />

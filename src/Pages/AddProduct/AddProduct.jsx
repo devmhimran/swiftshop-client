@@ -40,7 +40,6 @@ const AddProduct = () => {
         axios.post(url, uploadProduct, { headers })
             .then((response) => {
                 toast.success('Successfully Uploaded!')
-                console.log(response.data);
             })
             .catch((error) => {
                 console.log(error);

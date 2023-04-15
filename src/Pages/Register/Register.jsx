@@ -27,18 +27,13 @@ const Register = () => {
         const phone = e.target.phone.value
         const password = e.target.password.value;
 
-        console.log(name, email, phone, password)
-
         if (phone.includes('+880')) {
             await createUserWithEmailAndPassword(email, password);
             await updateProfile({ displayName: name });
             await sendEmailVerification();
         } else {
             setPhoneError('Please Add +880 before')
-            // phoneError = <><small className='text-red-400'>Please Add +880 before</small></>
         }
-
-
 
     }
     let from = location.state?.from?.pathname || "/dashboard";
@@ -69,9 +64,7 @@ const Register = () => {
                         {
                             error ?
                                 <small className='text-red-400'>{error.message}</small> : ''
-                        }
-                        
-                        
+                        }       
                     </div>
                     <Button type='submit' className="mt-6" fullWidth>
                         Register
