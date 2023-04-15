@@ -6,7 +6,7 @@ const ProductTableRow = ({ product }) => {
     const navigate = useNavigate();
     return (
         <tr>
-            <td><img className='w-8 h-10 object-cover' src={image} alt="" /></td>
+            <td className='py-2'><img className='w-8 h-10 object-cover' src={image} alt="" /></td>
             <td className='hover:underline cursor-pointer' onClick={()=>navigate(`/products/${id}`)}>{title.slice(0, 32)}...</td>
             <td>{category}</td>
             <td>${price}</td>
