@@ -32,19 +32,21 @@ const AddProduct = () => {
             category,
             image,
             rating: {
-                rating,
+                rate,
                 count,
             },
         };
 
-        axios.post(url, uploadProduct, { headers })
-            .then((response) => {
-                toast.success('Successfully Uploaded!')
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-        e.target.reset();
+        console.log(uploadProduct)
+
+        // axios.post(url, uploadProduct, { headers })
+        //     .then((response) => {
+        //         toast.success('Successfully Uploaded!')
+        //     })
+        //     .catch((error) => {
+        //         console.log(error);
+        //     });
+        // e.target.reset();
     };
 
     return (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Card,
     Input,
@@ -12,6 +12,7 @@ import auth from '../../Components/firebase.init';
 import { useNavigate, useLocation } from 'react-router-dom';
 import useToken from '../../Hooks/useToken';
 import PageTitle from '../../Components/PageTitle/PageTitle';
+import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 
 const Login = () => {
     const [
@@ -23,6 +24,7 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const [token] = useToken(user)
+    const [show, setShow] = useState(false)
 
     let from = location.state?.from?.pathname || "/dashboard";
 
@@ -33,7 +35,7 @@ const Login = () => {
 
         signInWithEmailAndPassword(email, password)
     }
-        
+
     if (token) {
         navigate(from, { replace: true });
     }
@@ -50,8 +52,15 @@ const Login = () => {
                 </Typography>
                 <form onSubmit={handleLogin} className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
                     <div className="mb-4 flex flex-col gap-6">
-                        <Input size="lg" label="Email" type='email' name='email' />
-                        <Input type="password" size="lg" label="Password" name='password' />
+                        <div>
+                            <Input size="lg" label="Email" type='email' name='email' />
+                        </div>
+                        <div className='relative'>
+                            <span className={`absolute z-10 text-xl right-2 top-3 cursor-pointer ${show ? 'hidden': ''}`} onClick={()=>setShow(!show)}><AiFillEye /></span>
+                            <span className={`absolute z-10 text-xl right-2 top-3 cursor-pointer ${show ? '': 'hidden'}`} onClick={()=>setShow(!show)}><AiFillEyeInvisible /></span>
+                            <Input type={`${show ? 'text':  'password' }`} size="lg" label="Password" name='password' />
+                        </div>
+
                         <p className='text-sm text-red-600'>{error ? error.message : ''}</p>
                     </div>
                     <Button type='submit' className="mt-6" fullWidth>

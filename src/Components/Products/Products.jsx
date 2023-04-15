@@ -7,7 +7,6 @@ const Products = ({handleCart}) => {
     const [products] = useProducts();
     return (
         <div className='grid grid-cols-2 lg:grid-cols-4 gap-4 my-10'>
-            <PageTitle title='Products' />
             {
                 products.map(data => <ProductCard key={data._id} data={data} handleCart={handleCart} />)
             }

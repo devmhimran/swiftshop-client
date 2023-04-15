@@ -27,7 +27,7 @@ const ProductCard = ({ data, handleCart }) => {
                 <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
             </CardHeader>
 
-            <CardBody className='p-4'>
+            <CardBody className='px-4 pt-4 pb-0'>
 
                 <div className="mb-3 flex items-center justify-between">
                     <Typography variant="h5" color="blue-gray" className="font-medium">
@@ -43,17 +43,19 @@ const ProductCard = ({ data, handleCart }) => {
                 <Typography color="blue-gray" variant="paragraph">
                     Category: <span className='font-bold capitalize text-base'>{category}</span>
                 </Typography>
-                <Typography color="blue-gray" variant="paragraph">
-                    <span className='font-bold capitalize text-xl my-2'>${price}</span>
-                </Typography>
+                <div className='flex justify-between my-2'>
+                    <Typography color="blue-gray" variant="paragraph">
+                        <span className='font-bold capitalize text-xl my-2'>${price}</span>
+                    </Typography>
 
-                <div className="rating flex items-center">
-                    <span className='text-[#FBC02D] mr-1'><AiFillStar /></span>
-                    {rating.rate}
+                    <div className="rating flex items-center">
+                        <span className='text-[#FBC02D] mr-1'><AiFillStar /></span>
+                        {rating.rate} ({rating.count})
+                    </div>
                 </div>
             </CardBody>
 
-            <CardFooter className=" p-4">
+            <CardFooter className="p-3">
                 <Button onClick={() => navigate(`/products/${_id}`)} size="lg" fullWidth={true}>
                     View Detail
                 </Button>
