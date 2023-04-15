@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../Components/firebase.init';
 import { useNavigate, useLocation } from 'react-router-dom';
+import useToken from '../../Hooks/useToken';
 
 const Login = () => {
     const [
@@ -20,12 +21,9 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
     const navigate = useNavigate();
     const location = useLocation();
+    const [token] = useToken(user)
 
     let from = location.state?.from?.pathname || "/";
-    
-    if (user) {
-        navigate(from, { replace: true });
-    }
 
     const handleLogin = (e) => {
         e.preventDefault()
@@ -33,6 +31,10 @@ const Login = () => {
         const password = e.target.password.value
 
         signInWithEmailAndPassword(email, password)
+    }
+        
+    if (token) {
+        navigate(from, { replace: true });
     }
     console.log(user)
     return (

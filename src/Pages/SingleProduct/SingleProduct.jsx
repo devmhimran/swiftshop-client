@@ -48,10 +48,10 @@ const SingleProduct = () => {
                         <img className='w-10/12' src={image} alt="" />
                     </div>
                     <div>
-                        <h1 className='font-bold text-3xl'>{title}</h1>
+                        <h1 className='font-bold text-3xl leading-snug'>{title}</h1>
                         <p className='flex items-center mr-2'>Rating:  <span className='text-[#FBC02D] ml-2 mr-1'><AiFillStar /></span>
                             {rating?.rate} ({rating?.count})</p>
-                        <p className='text-gray-700 my-3 text-lg'>{description}</p>
+                        <p className='text-gray-700 my-8 text-lg'>{description}</p>
                         <p className='capitalize text-xl'>Category: {category}</p>
                         <div className="add__to__cart my-5 flex gap-3">
                             <input className='border px-2.5 py-2 w-16' type="number" name="" id="" value='0' />
