@@ -8,7 +8,7 @@ import CustomerTableRow from '../../Components/CustomerTableRow/CustomerTableRow
 
 const AllCustomer = () => {
     const [customer, setCustomer] = useState([]);
-    const url = 'http://localhost:5000/customers'
+    const url = 'https://swiftshop-server.vercel.app/customers'
     const headers = {
         'Content-Type': 'application/json',
         authorization: `Bearer ${localStorage.getItem('accessToken')}`,

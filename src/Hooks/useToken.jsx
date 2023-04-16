@@ -12,7 +12,7 @@ const useToken = (value) => {
         };
 
         if (value?.user?.email) {
-            fetch(`http://localhost:5000/user/${value?.user?.email}`, {
+            fetch(`https://swiftshop-server.vercel.app/user/${value?.user?.email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

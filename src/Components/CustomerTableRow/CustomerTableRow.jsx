@@ -12,7 +12,7 @@ const CustomerTableRow = ({ customer }) => {
     const { _id, name, email, phone, address } = customer;
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(!open);
-    const url = `http://localhost:5000/customer/${_id}`;
+    const url = `https://swiftshop-server.vercel.app/customer/${_id}`;
     const headers = {
         'Content-Type': 'application/json',
         authorization: `Bearer ${localStorage.getItem('accessToken')}`,

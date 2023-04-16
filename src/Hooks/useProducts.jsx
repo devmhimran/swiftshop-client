@@ -5,7 +5,7 @@ import { useState } from "react";
 const useProducts = () => {
     const [products, setProducts] = useState([])
     useEffect(() => {
-        axios.get("http://localhost:5000/products")
+        axios.get("https://swiftshop-server.vercel.app/products")
             .then((res) => {
                 setProducts(res.data)
             });

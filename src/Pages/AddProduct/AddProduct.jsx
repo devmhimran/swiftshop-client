@@ -6,7 +6,7 @@ import { Toaster, toast } from 'react-hot-toast';
 
 const AddProduct = () => {
     const [category, setCategory] = useState('');
-    const url = 'http://localhost:5000/product';
+    const url = 'https://swiftshop-server.vercel.app/product';
     const headers = {
         'Content-Type': 'application/json',
         authorization: `Bearer ${localStorage.getItem('accessToken')}`,

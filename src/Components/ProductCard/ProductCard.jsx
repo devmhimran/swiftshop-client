@@ -13,7 +13,7 @@ import { AiFillStar } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom'
 
 
-const ProductCard = ({ data, handleCart }) => {
+const ProductCard = ({ data }) => {
     const { _id, title, description, price, rating, brand, category, image } = data
     const navigate = useNavigate()
     return (

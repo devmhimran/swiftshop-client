@@ -5,7 +5,7 @@ import { Toaster, toast } from 'react-hot-toast';
 import { Button, Input, Textarea } from '@material-tailwind/react';
 
 const AddCustomer = () => {
-    const url = 'http://localhost:5000/customer';
+    const url = 'https://swiftshop-server.vercel.app/customer';
     const headers = {
         'Content-Type': 'application/json',
         authorization: `Bearer ${localStorage.getItem('accessToken')}`,

@@ -20,7 +20,7 @@ const SingleProduct = () => {
     const [product, setProduct] = useState([]);
     const { title, description, price, rating, brand, category, image } = product
     useEffect(() => {
-        axios.get(`http://localhost:5000/product/${id}`)
+        axios.get(`https://swiftshop-server.vercel.app/product/${id}`)
             .then(res => setProduct(res.data))
     }, [id])
 

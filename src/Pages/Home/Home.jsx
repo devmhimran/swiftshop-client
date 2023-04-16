@@ -2,6 +2,7 @@ import React from 'react';
 import Hero from '../../Components/Hero/Hero';
 import Products from '../../Components/Products/Products';
 import PageTitle from '../../Components/PageTitle/PageTitle';
+import Footer from '../../Components/Footer/Footer';
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
                 <h1 className='text-4xl font-bold text-center'>Out Products</h1>
                 <Products />
             </div>
+            <Footer/>
         </div>
     );
 };
